@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carts
   get 'admin/dashboard'
   get 'home/user_guidelines'
   resources :categories

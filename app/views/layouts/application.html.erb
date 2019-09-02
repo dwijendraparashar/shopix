@@ -41,23 +41,27 @@
               </div>
           </form>
 
-  <% if user_signed_in? %>
-  <% if current_user[:role] == "admin" %>
+      <% if user_signed_in? %>
+        <% if current_user[:role] == "admin" %>
           <div class="navbar-nav">
             <a href="/users/sign_out" class="nav-item nav-link">Sign Out</a>
             </div>
             <li> <a>Current User: <%= current_user.email %></a></li>
           <% else %>
-          <div class="navbar-nav">
+          
+        <% end %>
+      <% else %>
+        <div class="navbar-nav">
               <a href="/users/sign_in" class="nav-item nav-link">Sign In</a>
-          </div>
-          <div class="navbar-nav">
-              <a href="/users/sign_up" class="nav-item nav-link">Sign Up</a>
-          </div>
-          <% end %>
+        </div>
+        <div class="navbar-nav">
+            <a href="/users/sign_up" class="nav-item nav-link">Sign Up</a>
+        </div>
+      <% end %>
+
       </div>
     </nav>
-    
+
   <%= yield %>
   </body>
 </html>

@@ -3,5 +3,6 @@ class AdminController < ApplicationController
   before_action :authentication_admin!
  
   def dashboard
+  	@products=Product.all
   end
-end
+end	

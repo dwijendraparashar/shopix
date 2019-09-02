@@ -1,5 +1,5 @@
 
-	
+
 <% if @categories.present? %>
 	<% @categories.each do |category| %>
 		<%= category.title %>
@@ -12,6 +12,7 @@
 		<h1><%= product.title %></h1>
 	<% end %>
 <% end %>
+
 <%= will_paginate @products %>
 
 
