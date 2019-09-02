@@ -1,0 +1,97 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="container">
+    <h3 class="h3"></h3>
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-3 col-sm-6 size">
+            <div class="product-grid">
+                <div class="product-image size">
+                    <a href="#">
+                      <% if product.image.present? %>
+                        <img class="pic-1 size" src="<%= product.image%>">
+                      <% else %>  
+                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg">
+                        
+                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg">
+                      <% end %>  
+                    </a>
+                    <ul class="social">
+                        <li><a href="/products/<%= product.id %>" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+                        <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    </ul>
+                    <span class="product-new-label">Sale</span>
+                    <span class="product-discount-label">20%</span>
+                </div>
+                <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star disable"></li>
+                </ul>
+                <div class="product-content">
+                    <h3 class="title"><a href="#"><%= product.title %></a></h3>
+                    <div class="price">$<%= product.unit_price %>
+                        <span>$20.00</span>
+                    </div>
+                    <a class="add-to-cart" href="">+ Add To Cart</a>
+                </div>
+            </div>
+        </div>
+      <% end %>  
+    </div>
+</div>
+<%= will_paginate @products %>
+<hr>
+
+<p id="notice"><%= notice %></p>
+
+<!-- <h1>Products</h1> -->
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Unit price</th>
+      <th>Available item</th>
+      <th>Is active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead> -->
+<!-- 
+  <tbody>
+    <%# @products.each do |product| %>
+      <tr>
+        <td><%#= product.category.title %></td>
+        <td><%#= product.title %></td>
+        <td><%#= product.description %></td>
+        <td><%#= product.image %></td>
+        <td><%#= product.unit_price %></td>
+        <td><%#= product.available_item %></td>
+        <td><%#= product.is_active %></td>
+        <td><%#= link_to 'Show', product %></td>
+        <td><%#= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%#= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table> -->
+
+
+<!-- <br> -->
+
+<%#= link_to 'New Product', new_product_path %>
+<style type="text/css">
+  .size
+  {
+    min-height: 324px !important;
+  }
+</style>
