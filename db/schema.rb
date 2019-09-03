@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_132203) do
+ActiveRecord::Schema.define(version: 2019_09_03_110153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carrers", force: :cascade do |t|
+    t.string "name"
+    t.string "father_name"
+    t.string "mother_name"
+    t.string "string"
+    t.float "dob"
+    t.text "address"
+    t.string "email"
+    t.string "resume"
+    t.string "image"
+    t.string "signature"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "carts", force: :cascade do |t|
     t.integer "product_id"
@@ -40,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_132203) do
     t.boolean "is_active", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price"
   end
 
   create_table "subcategories", force: :cascade do |t|
@@ -68,6 +84,13 @@ ActiveRecord::Schema.define(version: 2019_09_02_132203) do
     t.boolean "is_active"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

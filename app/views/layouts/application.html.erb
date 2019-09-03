@@ -19,8 +19,10 @@
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav">
               <a href="/home/index" class="nav-item nav-link active">Home</a>
-              <a href="/categories" class="nav-item nav-link">Categories</a>
-              <a href="/users/sign_up" class="nav-item nav-link">Profile Page</a>
+             <!--  <a href="/categories" class="nav-item nav-link">Categories</a> -->
+              <a href="/users/sign_up" class="nav-item nav-link">Admin Page</a>
+             <!--  <a href="/products" class="nav-item nav-link">Products</a>
+ -->
 
 
              <!--  <div class="nav-item dropdown">
@@ -32,11 +34,11 @@
                   </div> -->
               </div>
           </div>
-          <form class="form-inline">
+          <form class="form-inline" action="/home/index">
               <div class="input-group">                    
-                  <input type="text" class="form-control" placeholder="Search">
+                  <input type="text" name="search_key" class="form-control" placeholder="Search">
                   <div class="input-group-append">
-                      <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                      <button type="submit" class="btn btn-secondary"><i class="fa fa-search"></i></button>
                   </div>
               </div>
           </form>
@@ -47,8 +49,10 @@
             <a href="/users/sign_out" class="nav-item nav-link">Sign Out</a>
             </div>
             <li> <a>Current User: <%= current_user.email %></a></li>
-          <% else %>
-          
+        <% else %>
+          <div class="navbar-nav">
+            <a href="/users/sign_out" class="nav-item nav-link">Sign Out</a>
+          </div>
         <% end %>
       <% else %>
         <div class="navbar-nav">
@@ -63,5 +67,130 @@
     </nav>
 
   <%= yield %>
+  <!-- Footer -->
+<footer class="page-footer font-small indigo">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Buyers Section</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/home/bsuppliers">Search Product & Suppliers</a>
+          </li>
+          <li>
+            <a href="/home/brequirements">Post Your Requirements</a>
+          </li>
+          <li>
+            <a href="/home/bcomplaints">Complaints</a>
+          </li>
+          <li>
+            <a href="/home/bfeedbacks">Feedbacks</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Seller Section</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/home/sadvertise">Advertise Your Profile</a>
+          </li>
+          <li>
+            <a href="/home/spost">Post Your Product</a>
+          </li>
+          <li>
+            <a href="/home/sadvertise">Advertise Your Product</a>
+          </li>
+          <li>
+            <a href="/home/sconnect">Connect with Us</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Customer Tool Kit</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/home/cbuy">Product You Buy</a>
+          </li>
+          <li>
+            <a href="/home/csection">Customer Section</a>
+          </li>
+          <li>
+            <a href="/home/cfeedbacks">Products Feedback</a>
+          </li>
+          <li>
+            <a href="/home/cdiscount">Products at Discount</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Others</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="/home/about">About Us</a>
+          </li>
+          <li>
+            <a href="/home/contact">Contact Us</a>
+          </li>
+          <li>
+            <a href="/home/customercare">Customer Care</a>
+          </li>
+          <li>
+            <a href="/home/job">Job</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="https://bitterntec.com/"> www.bitterntec.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
   </body>
 </html>

@@ -1,0 +1,2 @@
+class Carrer < ApplicationRecord
+end

@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carrers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Father name</th>
+      <th>Mother name</th>
+      <th>String</th>
+      <th>Dob</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Resume</th>
+      <th>Image</th>
+      <th>Signature</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carrers.each do |carrer| %>
+      <tr>
+        <td><%= carrer.name %></td>
+        <td><%= carrer.father_name %></td>
+        <td><%= carrer.mother_name %></td>
+        <td><%= carrer.string %></td>
+        <td><%= carrer.dob %></td>
+        <td><%= carrer.address %></td>
+        <td><%= carrer.email %></td>
+        <td><%= carrer.resume %></td>
+        <td><%= carrer.image %></td>
+        <td><%= carrer.signature %></td>
+        <td><%= link_to 'Show', carrer %></td>
+        <td><%= link_to 'Edit', edit_carrer_path(carrer) %></td>
+        <td><%= link_to 'Destroy', carrer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carrer', new_carrer_path %>
