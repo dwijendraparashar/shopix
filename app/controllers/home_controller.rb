@@ -57,8 +57,8 @@ class HomeController < ApplicationController
   def cfeedbacks
   end
 
-   def cdiscount
-   end
+ def cdiscount
+ end
 
 
   def bsuppliers

@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <a href="/products" class="navbar-brand">Products</a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
@@ -18,9 +18,8 @@
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav">
-              <a href="/home/index" class="nav-item nav-link active">Home</a>
-             <!--  <a href="/categories" class="nav-item nav-link">Categories</a> -->
-              <a href="/users/sign_up" class="nav-item nav-link">Admin Page</a>
+              <a href="/" class="nav-item nav-link active">Home</a>
+              
              <!--  <a href="/products" class="nav-item nav-link">Products</a>
  -->
 
@@ -51,7 +50,12 @@
             <li> <a>Current User: <%= current_user.email %></a></li>
         <% else %>
           <div class="navbar-nav">
-            <a href="/users/sign_out" class="nav-item nav-link">Sign Out</a>
+             <a href="/users/sign_up" class="nav-item nav-link">Profile Page</a>
+            <a href="/wishlist" class=" nav-item nav-link"><li class="fa fa-heart"></li><%= current_user.wishlists.count %></a>
+            <a href="/cart_item" class="nav-item nav-link"><li class="fa fa-shopping-cart "></li><%= current_user.carts.count %></a>
+            
+             <a href="/users/sign_out" class="nav-item nav-link">Sign Out</a>
+
           </div>
         <% end %>
       <% else %>
@@ -68,7 +72,7 @@
 
   <%= yield %>
   <!-- Footer -->
-  <footer class="page-footer font-small indigo">
+  <footer class="page-footer font-small bg-light">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -176,21 +180,17 @@
           </ul>
 
         </div>
-        <!-- Grid column -->
+        
 
       </div>
-      <!-- Grid row -->
+      
 
     </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
+    
     <div class="footer-copyright text-center py-3">© 2019 Copyright:
       <a href="https://bitterntec.com/"> www.bitterntec.com</a>
     </div>
-    <!-- Copyright -->
-
+    
   </footer>
-<!-- Footer -->
   </body>
 </html>

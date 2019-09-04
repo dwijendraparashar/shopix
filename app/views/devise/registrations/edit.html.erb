@@ -45,12 +45,12 @@
   </div>
   <div class="field">
       <label for="image">Image</label>
-      <%= f.text_area :image,class: "form-control" %><br>
+      <%= f.file_field :image,class: "form-control" %><br>
   </div>
   <div class="field">
       <label for="address">Address</label>
       <%= f.text_area :address,class: "form-control" %><br>
-  </div>f
+  </div>
 
   <div class="actions">
     <%= f.submit "Update" %>

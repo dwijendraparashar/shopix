@@ -1,18 +1,10 @@
 <div class ="container">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %>
-  </div>
-<% end %>
-<% if flash[:alert] %>
-  <div class="alert" id ="alert"><%= flash[:alert] %>
-  </div>
-<% end %>
+
 <div class="container">
     <h3 class="h3"></h3>
     <div class="row">
-
       <% @products.each do |product| %>
         <div class="col-md-3 col-sm-6 size">
             <div class="product-grid">
@@ -31,7 +23,7 @@
 
                         <li><a href="/products/<%= product.id %>/wishlist" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
 
-                        <li><a href="/products/<%= product.id%>/cart" data-tip="Add to Cart" ><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="/products/<%= product.id%>/carts" data-tip="Add to Cart" ><i class="fa fa-shopping-cart"></i></a></li>
 
                     </ul>
                     <span class="product-new-label">Sale</span>
@@ -52,14 +44,14 @@
                         <!-- <span>$20.00</span> -->
                       <% end %>  
                     </div>
-                    <a class="add-to-cart" href="/carts">Add To Cart</a>
+                    <a class="add-to-cart" href="/carts">Add To Cart</a></br>
+                    <a href=""><%= link_to 'Remove Product from Cart', remove_cart_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></a>
                 </div>
             </div>
         </div>
       <% end %>  
     </div>
 </div>
-<%= will_paginate @products %>
 <hr>
 
 <p id="notice"><%= notice %></p>

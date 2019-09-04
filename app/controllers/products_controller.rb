@@ -12,6 +12,74 @@ class ProductsController < ApplicationController
   def show
   end
 
+
+  def cart
+  end
+
+  def add_wishlist
+    @product = Product.find(params[:product_id])
+    if user_signed_in?
+      existing_wishlist = current_user.wishlists.where(product_id: @product.id)
+      if existing_wishlist.present?
+        flash[:notice] = "Product is already in your wishlist"
+        redirect_to root_path
+      else
+        current_user.wishlists.create(product_id: @product.id)
+        flash[:notice] = "Product has been added in to your wishlist"
+        redirect_to root_path
+      end
+    else
+        flash[:notice] = "you need to sign in or sign up"
+        redirect_to "/users/sign_in"    
+    end  
+  end 
+
+
+
+  def remove_wishlist
+    @product = Product.find(params[:id])
+    current_user.wishlists.where(product_id: @product.id).first.destroy
+    redirect_to "/wishlist"
+  end 
+
+
+  def wishlist
+    product_ids = current_user.wishlists.map(&:product_id)
+    @products = Product.where(id: product_ids)
+  end 
+
+
+
+  def remove_cart
+    @product = Product.find(params[:id])
+    current_user.carts.where(product_id: @product.id).first.destroy
+    redirect_to "/cart_item"
+  end 
+
+
+  def cart
+   @product = Product.find(params[:id])
+    if user_signed_in?
+      existing_cart = current_user.carts.where(product_id: @product.id)
+      if existing_cart.present?
+        flash[:notice] = "Product is already in your cart"
+        redirect_to root_path
+      else
+        current_user.carts.create(product_id: @product.id)
+        flash[:notice] = "Product has been added in to your cart"
+        redirect_to root_path
+      end
+    else
+        flash[:notice] = "you need to sign in or sign up"
+        redirect_to "/users/sign_in"    
+    end  
+  end 
+
+  def cart_item
+    product_ids = current_user.carts.map(&:product_id)
+    @products = Product.where(id: product_ids)
+  end  
+
   # GET /products/new
   def new
     @product = Product.new
