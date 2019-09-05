@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_053606) do
+ActiveRecord::Schema.define(version: 2019_09_04_173933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billingaddresses", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.string "phone"
+    t.string "email"
+    t.text "addressline1"
+    t.text "addressline2"
+    t.text "addressline3"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "zipcode"
+    t.integer "order_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "carrers", force: :cascade do |t|
     t.string "name"
@@ -41,6 +59,13 @@ ActiveRecord::Schema.define(version: 2019_09_04_053606) do
     t.string "title"
     t.text "description"
     t.boolean "is_active", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

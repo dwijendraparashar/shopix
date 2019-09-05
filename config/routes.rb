@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :bilingaddresses
+  post '/rate' => 'rater#create', :as => 'rate'
+  resources :billingaddresses
+  resources :orders
   # resources :wishlists
   resources :carrers
   # resources :carts
@@ -49,7 +53,8 @@ Rails.application.routes.draw do
   get 'home/cfeedbacks'
   get 'home/cdiscount'
   get 'home/feedbacks'
-
+  get 'home/privacy'
+  
 
   root 'products#index'
   namespace :admin, module: nil  do
@@ -66,12 +71,15 @@ Rails.application.routes.draw do
   get "wishlist" => "products#wishlist"
   delete "/remove_wishlist/:id" => "products#remove_wishlist", as: :remove_wishlist
 
+
+
   get "cart_item" => "products#cart_item"
 
   get "cart" => "products#cart"
   delete "/remove_cart/:id" => "products#remove_cart", as: :remove_cart
 
- 
+  get "/checkout" => "orders#checkout"
+  resources :charges
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -16,3 +16,4 @@
 //= require activestorage
 //= require bootstrap-sprockets
 //= require popper
+//= require jquery_nested_form

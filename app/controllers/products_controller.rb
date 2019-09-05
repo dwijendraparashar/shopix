@@ -48,8 +48,6 @@ class ProductsController < ApplicationController
     @products = Product.where(id: product_ids)
   end 
 
-
-
   def remove_cart
     @product = Product.find(params[:id])
     current_user.carts.where(product_id: @product.id).first.destroy

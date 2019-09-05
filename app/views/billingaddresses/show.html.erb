@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @billingaddress.name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @billingaddress.gender %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @billingaddress.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @billingaddress.email %>
+</p>
+
+<p>
+  <strong>Addressline1:</strong>
+  <%= @billingaddress.addressline1 %>
+</p>
+
+<p>
+  <strong>Addressline2:</strong>
+  <%= @billingaddress.addressline2 %>
+</p>
+
+<p>
+  <strong>Addressline3:</strong>
+  <%= @billingaddress.addressline3 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @billingaddress.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @billingaddress.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @billingaddress.country %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @billingaddress.zipcode %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @billingaddress.order_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @billingaddress.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_billingaddress_path(@billingaddress) %> |
+<%= link_to 'Back', billingaddresses_path %>

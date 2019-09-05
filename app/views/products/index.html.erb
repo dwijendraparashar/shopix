@@ -59,7 +59,7 @@
       <% end %>  
     </div>
 </div>
-<%= will_paginate @products %>
+<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 <hr>
 
 <p id="notice"><%= notice %></p>

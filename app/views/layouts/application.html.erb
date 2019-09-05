@@ -51,8 +51,8 @@
         <% else %>
           <div class="navbar-nav">
              <a href="/users/sign_up" class="nav-item nav-link">Profile Page</a>
-            <a href="/wishlist" class=" nav-item nav-link"><li class="fa fa-heart"></li><%= current_user.wishlists.count %></a>
-            <a href="/cart_item" class="nav-item nav-link"><li class="fa fa-shopping-cart "></li><%= current_user.carts.count %></a>
+            <a href="/wishlist" class=" nav-item nav-link"><li class="fa fa-heart"></li>&nbsp<%= current_user.wishlists.count %></a>
+            <a href="/cart_item" class="nav-item nav-link"><li class="fa fa-shopping-cart "></li>&nbsp<%= current_user.carts.count %></a>
             
              <a href="/users/sign_out" class="nav-item nav-link">Sign Out</a>
 
@@ -168,14 +168,17 @@
             <li>
               <a href="/home/about">About Us</a>
             </li>
+             <li>
+              <a href="/home/privacy">Privacy</a>
+            </li>
             <li>
               <a href="/home/contact">Contact Us</a>
             </li>
             <li>
-              <a href="/home/customercare">Customer Care</a>
+              <a href="/home/customercare">How It Works</a>
             </li>
             <li>
-              <a href="/home/job">Job</a>
+              <a href="/home/job">Terms and Conditions</a>
             </li>
           </ul>
 

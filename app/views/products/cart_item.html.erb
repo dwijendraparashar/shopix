@@ -23,7 +23,6 @@
 
                         <li><a href="/products/<%= product.id %>/wishlist" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
 
-                        <li><a href="/products/<%= product.id%>/carts" data-tip="Add to Cart" ><i class="fa fa-shopping-cart"></i></a></li>
 
                     </ul>
                     <span class="product-new-label">Sale</span>
@@ -44,8 +43,8 @@
                         <!-- <span>$20.00</span> -->
                       <% end %>  
                     </div>
-                    <a class="add-to-cart" href="/carts">Add To Cart</a></br>
-                    <a href=""><%= link_to 'Remove Product from Cart', remove_cart_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></a>
+<!--                     <a class="add-to-cart" href="/carts">Add To Cart</a></br>
+ -->                    <a href=""><%= link_to 'Remove Product from Cart', remove_cart_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></a>
                 </div>
             </div>
         </div>
@@ -53,6 +52,18 @@
     </div>
 </div>
 <hr>
+<form>
+
+  <a href='/products'> 
+        <button class="GFG"> 
+            Continue Shopping
+        </button> 
+
+    <a href='/charges/new'> 
+        <button class="GFG"> 
+            Check Out 
+        </button>      
+
 
 <p id="notice"><%= notice %></p>
 

@@ -22,8 +22,9 @@
                     </a>
                     <ul class="social">
                         <li><a href="/products/<%= product.id %>" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                        <li><a href="/wishlists" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                        <li><a href="/wishlists" data-tip="Add to Wishlist"><i class="fa fa-star"></i></a></li>
                         <li><a href="/carts/:id" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                    
                     </ul>
                     <span class="product-new-label">Sale</span>
                     <span class="product-discount-label"><%= product.discount_precentage.to_f.round(2) %>%</span>
@@ -37,6 +38,7 @@
                 </ul>
                 <div class="product-content">
                     <h3 class="title"><a href="#"><%= product.title %></a></h3>
+
                     <div class="price">$<%= product.display_price %>
                       <% if product.unit_price.to_f > 0 %>
                         <del>$<%= product.display_full_price %></del>

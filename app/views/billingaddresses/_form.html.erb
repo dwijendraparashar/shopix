@@ -1,0 +1,82 @@
+<%= form_with(model: billingaddress, local: true) do |form| %>
+  <% if billingaddress.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(billingaddress.errors.count, "error") %> prohibited this billingaddress from being saved:</h2>
+
+      <ul>
+        <% billingaddress.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addressline1 %>
+    <%= form.text_area :addressline1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addressline2 %>
+    <%= form.text_area :addressline2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :addressline3 %>
+    <%= form.text_area :addressline3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.text_field :zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :order_id %>
+    <%= form.number_field :order_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

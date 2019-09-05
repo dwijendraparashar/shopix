@@ -11,6 +11,7 @@ module ApplicationHelper
     !is_namespace_admin
   end
   def set_layout
+   return "web" if params[:controller] == "charges" && params[:action] == "new"
    is_namespace_admin ? "admin" : "application"
   end
 end

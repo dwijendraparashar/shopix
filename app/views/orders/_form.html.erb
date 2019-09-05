@@ -1,0 +1,78 @@
+<%= nested_form_for(order, local: true, url: '/charges/new', method: :get) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.fields_for :billingaddresses do |billingaddress_form| %>
+      <p>
+    <%= billingaddress_form.label :name %><br>
+    <%= billingaddress_form.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= billingaddress_form.label :gender %><br>
+    <%= billingaddress_form.text_area :gender %>
+  </p>
+   <p>
+    <%= billingaddress_form.label :phone %><br>
+    <%= billingaddress_form.text_field :phone %>
+  </p>
+ 
+  <p>
+    <%= billingaddress_form.label :addressline1 %><br>
+    <%= billingaddress_form.text_area :addressline1 %>
+  </p>
+   <p>
+    <%= billingaddress_form.label :addressline2 %><br>
+    <%= billingaddress_form.text_area :addressline2 %>
+  </p>
+   <p>
+    <%= billingaddress_form.label :addressline3 %><br>
+    <%= billingaddress_form.text_area :addressline3 %>
+  </p>
+   <p>
+    <%= billingaddress_form.label :city %><br>
+    <%= billingaddress_form.text_field :city %>
+  </p>
+ 
+  <p>
+    <%= billingaddress_form.label :state %><br>
+    <%= billingaddress_form.text_area :state %>
+  </p>
+   <p>
+    <%= billingaddress_form.label :country %><br>
+    <%= billingaddress_form.text_field :country %>
+  </p>
+ 
+  <p>
+    <%= billingaddress_form.label :zipcode %><br>
+    <%= billingaddress_form.text_area :zipcode %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
+  <p><%= form.link_to_add "Add a billingaddress", :billingaddresses %></p>
+
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.number_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

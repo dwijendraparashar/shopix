@@ -1,20 +1,21 @@
 class HomeController < ApplicationController
   
   def index
-  	# byebug
   	if params[:search_key].present?
   		@categories = Category.all.where("lower(title) LIKE ?","%#{params[:search_key].downcase}%")
-		@products = Product.all.where("lower(title) LIKE ?","%#{params[:search_key].downcase}%").paginate(page: params[:page], per_page: 4)
-
-	else
+		  @products = Product.all.where("lower(title) LIKE ?","%#{params[:search_key].downcase}%").paginate(page: params[:page], per_page: 4)
+	   else
   		@categories=Category.all
   		@products = Product.paginate(page: params[:page], per_page: 4)
   	end
-  	end
+  end
 
   def about
   end
 
+  def privacy
+  end
+  
   def contact
   end
 
