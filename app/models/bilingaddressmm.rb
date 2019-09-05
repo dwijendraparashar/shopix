@@ -1,2 +1,0 @@
-class Bilingaddress < ApplicationRecord
-end

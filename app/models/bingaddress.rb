@@ -1,2 +1,0 @@
-class Bingaddress < ApplicationRecord
-end
