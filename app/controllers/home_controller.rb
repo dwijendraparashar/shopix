@@ -15,6 +15,9 @@ class HomeController < ApplicationController
 
   def privacy
   end
+
+  def show
+  end
   
   def contact
   end

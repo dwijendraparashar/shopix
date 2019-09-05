@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   get 'home/cdiscount'
   get 'home/feedbacks'
   get 'home/privacy'
+  get 'home/show'
   
 
   root 'products#index'
