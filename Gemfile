@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
@@ -62,3 +62,5 @@ gem 'carrierwave', '~> 2.0'
 gem "nested_form"
 gem 'stripe'
 gem 'ratyrate'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

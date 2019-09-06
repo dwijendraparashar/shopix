@@ -5,7 +5,6 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-		# byebug
 		product_ids = current_user.carts.map(&:product_id)
     	@products = Product.where(id: product_ids)
 	  # Amount in cents
@@ -22,6 +21,8 @@ class ChargesController < ApplicationController
 	    description: 'Rails Stripe customer',
 	    currency: 'usd',
 	  })
+	  @user = current_user
+	  UserMailer.welcome_email(@user).deliver_now
 	  
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message

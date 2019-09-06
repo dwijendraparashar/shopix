@@ -7,6 +7,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+  </script> 
+  
+  <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+  </script> 
+  
+  <script src= 
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> 
+  </script> 
   </head>
 
   <body>
@@ -24,13 +35,17 @@
  -->
 
 
-             <!--  <div class="nav-item dropdown">
-                  <a href="/users/edit" class="nav-link dropdown-toggle" data-toggle="dropdown">Profile Page</a>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Categories</a>
                   <div class="dropdown-menu">
-                      <a href="#" class="dropdown-item">Inbox</a>
-                      <a href="#" class="dropdown-item">Sent</a>
-                      <a href="#" class="dropdown-item">Drafts</a>
-                  </div> -->
+                      <a href="#" class="dropdown-item">Mobile</a>
+                      <a href="#" class="dropdown-item">Television</a>
+                      <a href="#" class="dropdown-item">Camera</a>
+                  </div>
+              
+
+
+
               </div>
           </div>
           <form class="form-inline" action="/home/index">
@@ -41,6 +56,20 @@
                   </div>
               </div>
           </form>
+<!-- 
+
+
+     <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Categories
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/categories/1">Mobiles</a>
+    <a class="dropdown-item" href="/categories/2">Televisions</a>
+    <a class="dropdown-item" href="/categories/3">Laptops</a>
+    <a class="dropdown-item" href="/categories/4">Cameras</a>
+  </div>
+</div> -->
 
       <% if user_signed_in? %>
         <% if current_user[:role] == "admin" %>

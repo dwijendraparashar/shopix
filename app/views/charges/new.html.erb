@@ -1,346 +1,58 @@
 <div class="container">
   <div class="row ">
     <div id="column-left" class="col-sm-4 col-md-4 col-lg-3 hidden-xs">
-      <div id="category-menu" class="navbar collapse mb_40"  >
-        <div class="nav-responsive">
-          <ul class="nav  main-navigation collapse in">
-            <li><a href="#">Appliances</a></li>
-            <li><a href="#">Mobile Phones</a></li>
-            <li><a href="#">Tablet PC & Accessories</a></li>
-            <li><a href="#">Consumer Electronics</a></li>
-            <li><a href="#">Computers & Networking</a></li>
-            <li><a href="#">Electrical & Tools</a></li>
-            <li><a href="#">Apparel</a></li>
-            <li><a href="#">Bags & Shoes</a></li>
-            <li><a href="#">Toys & Hobbies</a></li>
-            <li><a href="#">Watches & Jewelry</a></li>
-            <li><a href="#">Home & Garden</a></li>
-            <li><a href="#">Health & Beauty</a></li>
-            <li><a href="#">Outdoors & Sports</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="left_banner left-sidebar-widget mb_50 mt_30"> <a href="#"><img src="http://html.lionode.com/cools/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> </div>
+      
+      <div class="left_banner left-sidebar-widget mb_50 mt_30"> <a href="#"><!-- <img src="http://html.lionode.com/cools/images/left1.jpg" alt="Left Banner" class="img-responsive" /></a> --></a> </div>
       <div class="left-special left-sidebar-widget mb_50">
         <div class="heading-part mb_20 ">
           <h2 class="main_title">Top Products</h2>
         </div>
         <div id="left-special" class="owl-carousel">
           <ul class="row ">
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product8.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product8-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+            <% Product.all.limit(3).each do |p| %> 
+              <li class="item product-layout-left mb_20">
+                <div class="product-list col-xs-4">
+                  <div class="product-thumb">
+                    <div class="image product-imageblock"> <a href="product_detail_page.html">
+                    <img class="pic-1 size" src="<%= p.image%>"> </div>
                   </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
                 </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product9.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product9-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                <div class="col-xs-8">
+                  <div class="caption product-detail">
+                    <h6 class="product-name"><a href="#"><%= p.title %></a></h6>
+                    <!-- <div class="rating">
+                      <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                      <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                      <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                      <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
+                      <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
+                    </div> -->
+                    <span class="price"><span class="amount"><span class="currencySymbol">$</span><%= p.price %></span>
+                    </span>
                   </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
                 </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product10.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product10-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
+              </li>
+            <% end %>
+           
           </ul>
-          <ul class="row ">
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product1.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product1-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product2.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product2-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product3.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product3-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="row ">
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product4.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product4-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product5.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product5-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product6.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product6-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
-          <ul class="row ">
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product7.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product7-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product8.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product8-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-            <li class="item product-layout-left mb_20">
-              <div class="product-list col-xs-4">
-                <div class="product-thumb">
-                  <div class="image product-imageblock"> <a href="product_detail_page.html"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product9.jpg"> <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="http://html.lionode.com/cools/images/product/product9-1.jpg"> </a> </div>
-                </div>
-              </div>
-              <div class="col-xs-8">
-                <div class="caption product-detail">
-                  <h6 class="product-name"><a href="#">New Aviator Sunglasses</a></h6>
-                  <div class="rating">
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-1x"></i></span>
-                    <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i><i class="fa fa-star fa-stack-x"></i></span>
-                  </div>
-                  <span class="price"><span class="amount"><span class="currencySymbol">$</span>70.00</span>
-                  </span>
-                </div>
-              </div>
-            </li>
-          </ul>
+          
         </div>
       </div>
     </div>
     <div class="col-sm-8 col-md-8 col-lg-9 mtb_30">
       <!-- =====  BANNER STRAT  ===== -->
       <div class="breadcrumb ptb_20">
-        <h1>Shopping Cart</h1>
+        <h1>Cart Details</h1>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="active">Shopping Cart</li>
+          <li><a href=" /products">Home</a></li>
+          <li class="active">Cart</li>
         </ul>
       </div>
       <!-- =====  BREADCRUMB END===== -->
-      <div class="panel-group mt_20" id="accordion">
-        <div class="panel panel-default  ">
-          <div class="panel-heading">
-            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Step 1: Checkout Options <i class="fa fa-caret-down"></i></a></h4>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h3>New Customer</h3>
-                  <p>Checkout Options:</p>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" checked="checked" value="register" name="account"> Register Account</label>
-                  </div>
-                  <div class="radio">
-                    <label>
-                      <input type="radio" value="guest" name="account"> Guest Checkout</label>
-                  </div>
-                  <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
-                  <input type="button" class="btn mt_20" data-loading-text="Loading..." id="button-account" value="Continue">
-                </div>
-                <div class="col-sm-6">
-                  <h3>Returning Customer</h3>
-                  <p>I am a returning customer</p>
-                  <div class="form-group">
-                    <label for="input-email" class="control-label">E-Mail</label>
-                    <input type="text" class="form-control" id="input-email" placeholder="E-Mail" value="" name="email">
-                  </div>
-                  <div class="form-group">
-                    <label for="input-password" class="control-label">Password</label>
-                    <input type="password" class="form-control" id="input-password" placeholder="Password" value="" name="password">
-                    <input type="button" class="btn mt_20" data-loading-text="Loading..." id="button-login" value="Login">
-                    <a class="pt_30" href="#">Forgotten Password</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+     
         <div class="panel panel-default ">
           <div class="panel-heading">
-            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Step 2: Billing Details <i class="fa fa-caret-down"></i></a> </h4>
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Billing Details <i class="fa fa-caret-down"></i></a> </h4>
           </div>
           <div id="collapseTwo" class="panel-collapse collapse">
             <div class="panel-body">
@@ -445,7 +157,7 @@
         </div>
         <div class="panel panel-default ">
           <div class="panel-heading">
-            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Step 3: Delivery Details <i class="fa fa-caret-down"></i></a> </h4>
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Delivery Details <i class="fa fa-caret-down"></i></a> </h4>
           </div>
           <div id="collapseThree" class="panel-collapse collapse">
             <div class="panel-body">
@@ -548,57 +260,11 @@
             </div>
           </div>
         </div>
+        
+        
         <div class="panel panel-default ">
           <div class="panel-heading">
-            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefour">Step 4: Delivery Method  <i class="fa fa-caret-down"></i></a> </h4>
-          </div>
-          <div id="collapsefour" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>Please select the preferred shipping method to use on this order.</p>
-              <p><strong>Flat Rate</strong></p>
-              <div class="radio">
-                <label>
-                  <input type="radio" checked="checked" value="flat.flat" name="shipping_method"> Flat Shipping Rate - $5.00</label>
-              </div>
-              <p><strong>Add Comments About Your Order</strong></p>
-              <p>
-                <textarea class="form-control" rows="8" name="comment"></textarea>
-              </p>
-              <div class="buttons">
-                <div class="pull-right">
-                  <input type="button" class="btn mt_20" data-loading-text="Loading..." id="button-shipping-method" value="Continue">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default ">
-          <div class="panel-heading">
-            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsefive">Step 5: Payment Method  <i class="fa fa-caret-down"></i></a> </h4>
-          </div>
-          <div id="collapsefive" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p>Please select the preferred payment method to use on this order.</p>
-              <div class="radio">
-                <label>
-                  <input type="radio" checked="checked" value="cod" name="payment_method"> Cash On Delivery </label>
-              </div>
-              <p><strong>Add Comments About Your Order</strong></p>
-              <p>
-                <textarea class="form-control" rows="8" name="comment"></textarea>
-              </p>
-              <div class="buttons">
-                <div class="pull-right mt_20">I have read and agree to the <a class="agree" href="#"><b>Terms &amp; Conditions</b></a>
-                  <input type="checkbox" value="1" name="agree"> &nbsp;
-                  <input type="button" class="btn" data-loading-text="Loading..." id="button-payment-method" value="Continue">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="panel panel-default ">
-          <div class="panel-heading">
-            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">Step 6: Confirm Order <i class="fa fa-caret-down"></i></a> </h4>
+            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapsesix">Confirm Order <i class="fa fa-caret-down"></i></a> </h4>
           </div>
           <div id="collapsesix" class="panel-collapse collapse">
             <div class="panel-body">
@@ -643,13 +309,14 @@
                 </table>
               </div>
               <div class="buttons">
-                <%= form_tag charges_path do %>
+                <%= form_tag charges_path do  %>
                   <article>
                     <% if flash[:error].present? %>
                       <div id="error_explanation">
                         <p><%= flash[:error] %></p>
                       </div>
                     <% end %>
+                    <%#= text_field_tag :product_id, value = @products.ids %>
                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                           data-description="A month's subscription"
@@ -666,27 +333,4 @@
       </div>
     </div>
   </div>
-  <div id="brand_carouse" class="ptb_30 text-center">
-    <div class="type-01">
-      <div class="heading-part mb_20 ">
-        <h2 class="main_title">Brand Logo</h2>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="brand owl-carousel ptb_20">
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand1.png" alt="Disney" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand2.png" alt="Dell" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand3.png" alt="Harley" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand4.png" alt="Canon" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand5.png" alt="Canon" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand6.png" alt="Canon" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand7.png" alt="Canon" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand8.png" alt="Canon" class="img-responsive" /></a> </div>
-            <div class="item text-center"> <a href="#"><img src="http://html.lionode.com/cools/images/brand/brand9.png" alt="Canon" class="img-responsive" /></a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+ 
