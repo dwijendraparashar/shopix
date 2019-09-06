@@ -17,3 +17,5 @@
 //= require bootstrap-sprockets
 //= require popper
 //= require jquery_nested_form
+//= require jquery.raty
+//= require ratyrate

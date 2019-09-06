@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'user/index'
+  resources :rating_reviews
   resources :bilingaddresses
   post '/rate' => 'rater#create', :as => 'rate'
   resources :billingaddresses

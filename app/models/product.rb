@@ -1,6 +1,10 @@
 class Product < ApplicationRecord
 	belongs_to :category
-  has_many :carts, dependent: :destroy
+    has_many :carts, dependent: :destroy
+    has_many :user_feedbacks
+    belongs_to :users
+    has_many :users, through: :user_feedbacks
+    ratyrate_rateable "review"
 
  	mount_uploader :image, ImageUploader
  	def display_price
@@ -20,8 +24,9 @@ class Product < ApplicationRecord
  	end	
 
  	def discount_precentage
- 		if price.present? && price > 0 && unit_price.present? && unit_price > 0
- 			" " + (100 - (price.to_f / unit_price.to_f * 100.0)).to_s + "%"
+
+ 		if self.price.present? && self.price > 0 && self.unit_price.present? && self.unit_price > 0
+ 			" " + (100 - (self.price.to_f / self.unit_price.to_f * 100.0)).to_s + "%"
  		else
  			nil
  		end	 		
