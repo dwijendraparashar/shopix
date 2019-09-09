@@ -4,7 +4,8 @@ class HomeController < ApplicationController
   	if params[:search_key].present?
   		@categories = Category.all.where("lower(title) LIKE ?","%#{params[:search_key].downcase}%")
 		  @products = Product.all.where("lower(title) LIKE ?","%#{params[:search_key].downcase}%").paginate(page: params[:page], per_page: 4)
-	   else
+	   
+     else
   		@categories=Category.all
   		@products = Product.paginate(page: params[:page], per_page: 4)
   	end

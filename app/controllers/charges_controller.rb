@@ -2,8 +2,9 @@ class ChargesController < ApplicationController
 	def new
 		product_ids = current_user.carts.map(&:product_id)
     	@products = Product.where(id: product_ids)
+    	@billingaddress = Billingaddress.new
 	end
-
+	
 	def create
 		product_ids = current_user.carts.map(&:product_id)
     	@products = Product.where(id: product_ids)

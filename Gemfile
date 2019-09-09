@@ -63,4 +63,5 @@ gem "nested_form"
 gem 'stripe'
 gem 'ratyrate'
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary' 
+gem 'friendly_id', '~> 5.2.4' # Note: You MUST use 5.0.0 or greater for Rails 4.0+

@@ -12,6 +12,8 @@
 //
 //= require jquery3
 //= require rails-ujs
+//= require rating
+//= require turbolinks
 //= require jquery_ujs
 //= require activestorage
 //= require bootstrap-sprockets

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :user_admin, expect:[:after_sign_in_path_for]
+    before_action :user_admin, expect:[:after_sign_in_path_for]
   include ApplicationHelper
   layout :set_layout
   before_action :configure_permitted_parameters, if: :devise_controller?

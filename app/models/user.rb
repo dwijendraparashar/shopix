@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   ratyrate_rater
 	def is_admin?
    		return true if self.role =="admin"
@@ -6,6 +10,10 @@ class User < ApplicationRecord
   	has_many :bookings
   	has_many :wishlists
   	has_many :carts
+    has_many :rating_reviews
+
+  # extend FriendlyId
+  # friendly_id :name, use: :slugged
 
     # has_secure_password
     has_many :products, dependent: :destroy

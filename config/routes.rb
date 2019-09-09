@@ -29,7 +29,6 @@ Rails.application.routes.draw do
 
   get 'admin/dashboard'
   get 'home/user_guidelines'
-  resources :categories 
   resources :products do
     member do
       get :cart
@@ -57,13 +56,17 @@ Rails.application.routes.draw do
   get 'home/feedbacks'
   get 'home/privacy'
   get 'home/show'
-  
+  get 'categories/:id/products' => 'products#index'
 
   root 'products#index'
   namespace :admin, module: nil  do
     root "admin#dashboard"
     resources :users
+    resources :categories 
+
   end
+
+  resources :rating_reviews
 
   get "wishlist" => "products#wishlist"
   resources :products do

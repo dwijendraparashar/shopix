@@ -9,10 +9,10 @@
   <div class="alert" id ="alert"><%= flash[:alert] %>
   </div>
 <% end %>
+<%  if @products.present? %>
 <div class="container">
-    <h3 class="h3"></h3>
+    <h3 class="h3"></h3>  
     <div class="row">
-
       <% @products.each do |product| %>
         <div class="col-md-3 col-sm-6 size">
             <div class="product-grid">
@@ -59,12 +59,14 @@
                 </div>
             </div>
         </div>
-      <% end %>  
+      <% end %> 
     </div>
 </div><br><br>
 <div class="digg_pagination">
   <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 </div>
+<% end %> 
+
 <hr>
 
 <p id="notice"><%= notice %></p>

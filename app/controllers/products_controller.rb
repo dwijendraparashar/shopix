@@ -4,12 +4,29 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.paginate(:page => params[:page], :per_page => 8)
+    if params[:id].present? 
+      @category = Category.find(params[:id])
+      @products = @category.products.paginate(:page => params[:page], :per_page => 8)
+    else  
+      @products = Product.all.paginate(:page => params[:page], :per_page => 8)
+    end
   end
+
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @product = Product.find(params[:id])
+    if current_user.present?
+      if current_user.rating_reviews.where(product_id: @product.id).any?
+        @rating_review = current_user.rating_reviews.where(product_id: @product.id).first
+      else
+        @rating_review = RatingReview.new
+      end
+    else
+      @rating_review = RatingReview.new
+    end
+
   end
 
 

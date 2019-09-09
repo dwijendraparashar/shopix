@@ -3,6 +3,7 @@ class Product < ApplicationRecord
     has_many :carts, dependent: :destroy
     has_many :user_feedbacks
     belongs_to :users
+    has_many :rating_reviews
     has_many :users, through: :user_feedbacks
     ratyrate_rateable "review"
 
