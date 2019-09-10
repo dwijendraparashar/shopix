@@ -62,10 +62,10 @@ Rails.application.routes.draw do
   namespace :admin, module: nil  do
     root "admin#dashboard"
     resources :users
-    resources :categories 
 
   end
-
+    resources :categories 
+  
   resources :rating_reviews
 
   get "wishlist" => "products#wishlist"

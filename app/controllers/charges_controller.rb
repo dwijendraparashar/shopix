@@ -8,6 +8,8 @@ class ChargesController < ApplicationController
 	def create
 		product_ids = current_user.carts.map(&:product_id)
     	@products = Product.where(id: product_ids)
+        @order = Order.new(order_params)
+        @order.save
 	  # Amount in cents
 	  @amount = 500
 

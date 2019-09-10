@@ -1,3 +1,7 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/rating.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/rating.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
@@ -8,8 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Product Detail</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
 
   </head>
 
@@ -62,7 +66,7 @@
               <span class="color blue"></span>
             </h5>
             <div class="action">
-              <button class="add-to-cart btn btn-default" type="button">Add to cart</button>
+              <!-- <button class="add-to-cart btn btn-default" type="button">Add to cart</button> -->
               <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
             </div>
           </div>
@@ -127,7 +131,6 @@
                     <div class="form-group">
                       <h3><%= f.label "Review" %></h3>
                       <%= f.text_area :review, class:"form-control", rows:"12", :required => true, value: @rating_review.review  %>
-                      <%#= f.file_field :image, class: "form-control", rows:"12", value: @rating_review.image %><br/>
                     </div>
                   </div>
                 </div>
@@ -233,11 +236,6 @@
   .inla
   {
   color: red;
-  }
-  .zoomWrapperImagyse
-  {
-    height: 50px !important;
-    width: 50px !important;
   }
 </style> 
 <%#= rating_for @product, 'star', cancel_on: 'cancel-on2.png' %>

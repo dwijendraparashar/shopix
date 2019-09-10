@@ -71,4 +71,17 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:title, :description, :is_active)
     end
+
+def index
+    # byebug
+    if params[:id].present? 
+      @category = Category.find(params[:id])
+      @products = @category.products.paginate(:page => params[:page], :per_page => 8)
+    else  
+      @products = Product.all.paginate(:page => params[:page], :per_page => 8)
+    end
+  end
+
+
+    
 end
