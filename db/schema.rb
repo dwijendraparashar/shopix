@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(version: 2019_09_10_110825) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "customer"
+    t.integer "billingaddress_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
   end
 
   create_table "products", force: :cascade do |t|
@@ -101,9 +106,6 @@ ActiveRecord::Schema.define(version: 2019_09_10_110825) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "price"
-    t.string "customer"
-    t.integer "order_id"
-    t.integer "address_id"
   end
 
   create_table "rating_reviews", force: :cascade do |t|

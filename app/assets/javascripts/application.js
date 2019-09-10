@@ -13,7 +13,10 @@
 //= require jquery3
 //= require rails-ujs
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
 //= require activestorage
 //= require bootstrap
 //= require popper
 //= require bootstrap-sprockets
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap

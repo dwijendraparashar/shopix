@@ -6,6 +6,7 @@ class ChargesController < ApplicationController
 	end
 	
 	def create
+		byebug
 		product_ids = current_user.carts.map(&:product_id)
     	@products = Product.where(id: product_ids)
         @order = Order.new(order_params)
