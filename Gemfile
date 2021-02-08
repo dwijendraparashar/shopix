@@ -59,7 +59,7 @@ gem 'devise'
 gem 'will_paginate-bootstrap'
 gem 'bootstrap', '~> 4.3.1'
 
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem "nested_form"
 gem 'stripe'
 gem 'ratyrate'
